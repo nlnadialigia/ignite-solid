@@ -1,0 +1,92 @@
+{
+  "openapi": "3.0.0",
+  "info": {
+    "title": "API Documentation",
+    "description": "This is an user Create and List API",
+    "version": "1.0.0",
+    "contact": {
+      "email": "nlnadialigia@gmail.com"
+    }
+  },
+  "tags": [
+    {
+      "name": "Users",
+      "description": "User management"
+    }
+  ],
+  "paths": {
+    "/users": {
+      "post": {
+        "tags": ["Users"],
+        "summary": "Create a new user",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "name": {
+                    "type": "string"
+                  },
+                  "email": {
+                    "type": "string"
+                  }
+                },
+                "example": {
+                  "name": "Maria Fernanda",
+                  "email": "mafe@email.com.br"
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "201": {
+            "description": "Created"
+          },
+          "400": {
+            "description": "Bad Request"
+          }
+        }
+      },
+      "get": {
+        "tags": ["Users"],
+        "summary": "List all users",
+        "description": "List all users if the user is an admin. You need an user_id to execute this route",
+        "parameters": [
+          {
+            "in": "header",
+            "name": "user_id",
+            "required": true,
+            "type": "string",
+            "format": "uuid"
+          }
+        ],          
+        "responses": {
+          "200": {
+            "description": "Ok"
+          },
+          "400": {
+            "description":"Bad Request"
+          }
+        }
+      }
+    },
+    "/users/{user_id}": {
+      "get":{
+        "tags": ["Users"],
+        "summary": "",
+        
+        "responses": {}
+      }
+    },
+    "/users/{user_id}/admin": {
+     "patch": {
+       "tags": ["Users"],
+       "summary": "",
+       
+       "responses": {}
+     }
+   }
+  }
+}
