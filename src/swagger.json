@@ -19,22 +19,26 @@
       "post": {
         "tags": ["Users"],
         "summary": "Create a new user",
+        "description": "To create a new user, add the name and email",
         "requestBody": {
+          "required": true,
           "content": {
             "application/json": {
               "schema": {
+                "required": [
+                  "name",
+                  "email"
+                ],
                 "type": "object",
                 "properties": {
                   "name": {
                     "type": "string"
                   },
-                  "email": {
-                    "type": "string"
-                  }
+                  "email": "string"
                 },
                 "example": {
                   "name": "Maria Fernanda",
-                  "email": "mafe@email.com.br"
+                  "email": "email@email.com"
                 }
               }
             }
@@ -75,17 +79,49 @@
     "/users/{user_id}": {
       "get":{
         "tags": ["Users"],
-        "summary": "",
-        
-        "responses": {}
+        "summary": "Get user profile by ID",
+        "description": "You need an user_id to execute this route",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "user_id",
+            "required": true,
+            "type": "string",
+            "format": "uuid"
+          }
+         ],
+        "responses": {
+          "200":{
+            "description": "Ok"
+          },
+          "404":{
+            "description": "Not Found"
+          }
+        }
       }
     },
     "/users/{user_id}/admin": {
      "patch": {
        "tags": ["Users"],
-       "summary": "",
-       
-       "responses": {}
+       "summary": "Turn an user as admin",
+       "description": "You need an user_id to execute this route",
+       "parameters": [
+        {
+          "in": "path",
+          "name": "user_id",
+          "required": true,
+          "type": "string",
+          "format": "uuid"
+        }
+       ],
+       "responses": {
+         "200": {
+           "description": "Ok"
+         },
+         "404": {
+           "description": "Not Found"
+         }
+       }
      }
    }
   }
