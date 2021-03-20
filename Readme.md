@@ -10,8 +10,8 @@
   <img alt="Repo size" src="https://img.shields.io/github/repo-size/nlnadialigia/ignite-solid?color=91091e"/>
    
   <img alt="Swagger" src="https://img.shields.io/swagger/valid/3.0?color=91091e&specUrl=https%3A%2F%2Fraw.githubusercontent.com%2Fnlnadialigia%2Fignite-solid%2Fmain%2Fsrc%2Fswagger.json" />
-  
-  <a href="./license.md">
+
+  <a href="./LICENSE.md">
   <img alt="License" src="https://img.shields.io/static/v1?label=license&message=MIT&color=91091e"/>
   </a>
 </h1>
@@ -26,24 +26,12 @@
   - [API Routes](#-📚-API-Routes)
 - [Tests Specification](#-✴️-tests-specification)
   - [Model Test](#-📚-Model-Test)
-    - [Should be able to create an user with all props](#-📌-Should-be-able-to-create-an-user-with-all-props)
   - [Repository Tests](#-📚-Repository-Tests)
-    - [Should be able to create new users](#-📌-Should-be-able-to-create-new-users)
-    - [Should be able to list all users](#-📌-Should-be-able-to-list-all-users)
-    - [Should be able to find user by ID](#-📌-Should-be-able-to-find-user-by-ID)
-    - [Should be able to find user by e-mail address](#-📌-Should-be-able-to-find-user-by-e-mail-address)
-    - [Should be able to turn an user as admin](#-📌-Should-be-able-to-turn-an-user-as-admin)
   - [UseCases Tests](#-📚-UseCases-Tests)
-    - [Should be able to create new users](#-📌-Should-be-able-to-create-new-users)
-    - [Should not be able to create new users when email is already taken](#-📌-Should-not-be-able-to-create-new-users-when-email-is-already-taken)
-    - [Should be able to turn an user as admin](#-📌-Should-be-able-to-turn-an-user-as-admin)
-    - [Should not be able to turn a non existing user as admin](#-📌-Should-not-be-able-to-turn-a-non-existing-user-as-admin)
-    - [Should be able to get user profile by ID](#-📌-Should-be-able-to-get-user-profile-by-ID)
-    - [Should not be able to show profile of a non existing user](#-📌-Should-not-be-able-to-show-profile-of-a-non-existing-user)
-    - [Should be able to list all users](#-📌-Should-be-able-to-list-all-users)
-    - [Should not be able to a non admin user get list of all users](#-📌-Should-not-be-able-to-a-non-admin-user-get-list-of-all-users)
-    - [Should not be able to a non existing user get list of all users](#-📌-Should-not-be-able-to-a-non-existing-user-get-list-of-all-users)
   - [Routes Tests](#-📚-Routes-Tests)
+- [The extra mile](#-⁉️-The-extra-mile)
+- [Author](#-👩‍💼-Author)
+- [License](#-📝-License)
 
 <br>
 
@@ -173,6 +161,7 @@ If the user does not exist, return a message error:
 ```tsx
 throw new Error("Mensagem do erro");
 ```
+
 ## 📚 Routes Tests
 
 ## 📝 Route - [POST] /users
@@ -213,9 +202,22 @@ For this test, using the proper useCase, the route must recieve the `admin` user
 
 For these tests, if an error has occurred in useCase, return a response with status `400` and a json with an object `{ error: "error message" }`, where the value of the `error` property should be the message thrown by the error in useCase.
 
+# ⁉️ The extra mile
+
+Implementation of extra features.
+
+## 📚 Should not be able to create new users without an email or name
+
+For this test, the `execute` method of CreateUserUseCase file must not allow an user to be created if the field `email` or `name` is empty.
+
+If exist an user with the same email retun the error message:
+```tsx
+throw new Error("Mensagem do erro");
+```
+
 <br>
 
-## 👩‍💼 Author
+# 👩‍💼 Author
 <img style="border-radius: 50%" src="./assets/picture.jpg" width="100px;" alt="Picture"/>
 <p><b>Nádia Ligia, budding back-end developer.</b></p>
 <a href="https://www.linkedin.com/in/nlnadialigia/">
@@ -230,7 +232,10 @@ For these tests, if an error has occurred in useCase, return a response with sta
 
 <br><br>
 
-## 📝 License
+# 📝 License
 
 This project is under de MIT licence. Look at the file [LICENSE](./LICENSE) for more information.
+
+
+
 

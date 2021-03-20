@@ -27,4 +27,13 @@ describe("CreateUserUseCase", () => {
       });
     }).toThrow();
   });
+
+  it("should not be able to create new users without email or user", () => {
+    expect(() => {
+      createUserUseCase.execute({
+        name: "",
+        email: "",
+      });
+    }).toThrow();
+  });
 });
