@@ -18,6 +18,7 @@
 <br>
 
 <p align="right">
+  <a href="https://insomnia.rest/run/?label=https%3A%2F%2Fraw.githubusercontent.com%2Fnlnadialigia%2Fignite-solid%2Fmain%2Finsomnia.json&uri=" target="_blank"><img src="https://insomnia.rest/images/run.svg" alt="Run in Insomnia"></a>
 </p>
 
 # ℹ️ Index
