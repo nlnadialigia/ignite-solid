@@ -5,7 +5,7 @@
 <h1 align="center">Users Management</h1>
 
 <h1 align="center">
-  <img alt="Last commit" src="https://img.shields.io/github/last-commit/nlnadialigia/dev.finances?color=91091e&style=flat-square"/>
+  <img alt="Last commit" src="https://img.shields.io/github/last-commit/nlnadialigia/ignite-solid?color=91091e&style=flat-square"/>
 
   <img alt="Repo size" src="https://img.shields.io/github/repo-size/nlnadialigia/ignite-solid?color=91091e"/>
    
