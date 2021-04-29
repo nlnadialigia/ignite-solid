@@ -176,7 +176,7 @@ For this test, if an error has occurred in useCase, return a response with statu
 
 To catch errors thrown by other files, you can wrap the contents of the controller in a `try/catch`.
 
-## 📝 Rota - [PATCH] /users/:user_id/admin
+## 📝 Route - [PATCH] /users/:user_id/admin
 ### 📌 Should be able to turn an user as admin
 
 For this test, using the proper useCase, the route must change an user to `admin` and return the user changed int the response body.
@@ -185,7 +185,7 @@ For this test, using the proper useCase, the route must change an user to `admin
 
 For this test, if an error has occurred in useCase, return a response with status `404` and a json with an object `{ error: "error message" }`, where the value of the `error` property should be the message thrown by the error in useCase.
 
-## 📝 Rota - [GET] /users/:user_id
+## 📝 Route - [GET] /users/:user_id
 ### 📌 Should be able to get user profile by ID
 
 For this test, using the proper useCase, the route must recieve the user `id` by route params and return the founded user object in the response body.
@@ -194,7 +194,7 @@ For this test, using the proper useCase, the route must recieve the user `id` by
 
 For this test, if an error has occurred in useCase, return a response with status `404` and a json with an object `{ error: "error message" }`, where the value of the `error` property should be the message thrown by the error in useCase.
 
-## 📝 Rota - [GET] /users
+## 📝 Route - [GET] /users
 ### 📌 Should be able to list all users
 
 For this test, using the proper useCase, the route must recieve the `admin` user `id` from `user_id` request header and return a user list created.
